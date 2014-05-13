@@ -19,7 +19,7 @@ public class MainApplication extends Application {
      * 
      * @return mContext
      */
-    public Context getContext() {
+    public static Context getContext() {
         return mContext;
     }
 
