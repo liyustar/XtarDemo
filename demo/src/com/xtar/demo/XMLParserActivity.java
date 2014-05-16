@@ -23,10 +23,15 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_sax:
+                doSaxParse();
                 break;
             default:
                 break;
         }
+    }
+
+    private void doSaxParse() {
+        // TODO Auto-generated method stub
     }
 
 }
