@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.xtar.demo.model.MFile;
 import com.xtar.demo.resolver.MFileDomParser;
+import com.xtar.demo.resolver.MFilePullParser;
 import com.xtar.demo.resolver.MFileSaxParser;
 
 public class XMLParserActivity extends Activity implements View.OnClickListener {
@@ -19,6 +20,7 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
 
     private Button btnSaxParser = null;
     private Button btnDomParser = null;
+    private Button btnPullParser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
         btnSaxParser.setOnClickListener(this);
         btnDomParser = (Button) findViewById(R.id.btn_dom);
         btnDomParser.setOnClickListener(this);
+        btnPullParser = (Button) findViewById(R.id.btn_pull);
+        btnPullParser.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +44,9 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
                 break;
             case R.id.btn_dom:
                 doDomParse();
+                break;
+            case R.id.btn_pull:
+                doPullParse();
                 break;
             default:
                 break;
@@ -65,6 +72,22 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
     private void doDomParse() {
         InputStream in = this.getResources().openRawResource(R.raw.person_data);
         MFileDomParser mfsp = new MFileDomParser();
+        List<MFile> mfiles = mfsp.doParse(in);
+        for (int i = 0; i < mfiles.size(); i++) {
+            Log.d(TAG, mfiles.get(i).toString());
+        }
+
+        // close inputstream
+        try {
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void doPullParse() {
+        InputStream in = this.getResources().openRawResource(R.raw.person_data);
+        MFilePullParser mfsp = new MFilePullParser();
         List<MFile> mfiles = mfsp.doParse(in);
         for (int i = 0; i < mfiles.size(); i++) {
             Log.d(TAG, mfiles.get(i).toString());
