@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">XtarDemo</string>
     <string name="sax_parser">SAX Parser</string>
+    <string name="dom_parser">DOM Parser</string>
 </resources>

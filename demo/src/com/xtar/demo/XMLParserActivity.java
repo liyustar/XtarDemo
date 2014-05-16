@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.xtar.demo.model.MFile;
+import com.xtar.demo.resolver.MFileDomParser;
 import com.xtar.demo.resolver.MFileSaxParser;
 
 public class XMLParserActivity extends Activity implements View.OnClickListener {
     private static final String TAG = XMLParserActivity.class.getSimpleName();
 
     private Button btnSaxParser = null;
+    private Button btnDomParser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
 
         btnSaxParser = (Button) findViewById(R.id.btn_sax);
         btnSaxParser.setOnClickListener(this);
+        btnDomParser = (Button) findViewById(R.id.btn_dom);
+        btnDomParser.setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +37,9 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.btn_sax:
                 doSaxParse();
+                break;
+            case R.id.btn_dom:
+                doDomParse();
                 break;
             default:
                 break;
@@ -42,6 +49,22 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
     private void doSaxParse() {
         InputStream in = this.getResources().openRawResource(R.raw.person_data);
         MFileSaxParser mfsp = new MFileSaxParser();
+        List<MFile> mfiles = mfsp.doParse(in);
+        for (int i = 0; i < mfiles.size(); i++) {
+            Log.d(TAG, mfiles.get(i).toString());
+        }
+
+        // close inputstream
+        try {
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void doDomParse() {
+        InputStream in = this.getResources().openRawResource(R.raw.person_data);
+        MFileDomParser mfsp = new MFileDomParser();
         List<MFile> mfiles = mfsp.doParse(in);
         for (int i = 0; i < mfiles.size(); i++) {
             Log.d(TAG, mfiles.get(i).toString());
