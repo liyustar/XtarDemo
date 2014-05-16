@@ -4,4 +4,5 @@
     <string name="sax_parser">SAX Parser</string>
     <string name="dom_parser">DOM Parser</string>
     <string name="pull_parser">PULL Parser</string>
+    <string name="listview1">ListView Model 1</string>
 </resources>
