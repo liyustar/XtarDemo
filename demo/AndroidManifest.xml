@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".XMLParserActivity" />
         <activity android:name=".ListViewActivity" />
+        <activity android:name=".ListViewModel1Activity" />
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.xtar.demo.app.MainApplication;
 import com.xtar.demo.model.MFile;
 import com.xtar.demo.resolver.MFileDomParser;
 import com.xtar.demo.resolver.MFilePullParser;
@@ -99,5 +100,20 @@ public class XMLParserActivity extends Activity implements View.OnClickListener 
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static List<MFile> getMFileData() {
+        InputStream in = MainApplication.getContext().getResources()
+                .openRawResource(R.raw.person_data);
+        MFileSaxParser mfsp = new MFileSaxParser();
+        List<MFile> mfiles = mfsp.doParse(in);
+
+        // close inputstream
+        try {
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return mfiles;
     }
 }
