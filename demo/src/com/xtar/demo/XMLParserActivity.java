@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.xtar.demo.module.MFile;
+import com.xtar.demo.model.MFile;
 import com.xtar.demo.resolver.MFileSaxParser;
 
 public class XMLParserActivity extends Activity implements View.OnClickListener {

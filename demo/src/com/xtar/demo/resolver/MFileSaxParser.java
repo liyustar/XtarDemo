@@ -11,7 +11,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.xtar.demo.module.MFile;
+import com.xtar.demo.model.MFile;
 
 public class MFileSaxParser {
 

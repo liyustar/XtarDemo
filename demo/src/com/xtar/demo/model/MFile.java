@@ -1,4 +1,4 @@
-package com.xtar.demo.module;
+package com.xtar.demo.model;
 
 public class MFile {
     private int id;
