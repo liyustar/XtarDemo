@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">XtarDemo</string>
+    <string name="hello">Hello</string>
     <string name="sax_parser">SAX Parser</string>
     <string name="dom_parser">DOM Parser</string>
     <string name="pull_parser">PULL Parser</string>
