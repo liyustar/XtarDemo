@@ -16,6 +16,12 @@ import com.xtar.demo.resolver.MFileDomParser;
 import com.xtar.demo.resolver.MFilePullParser;
 import com.xtar.demo.resolver.MFileSaxParser;
 
+/**
+ * 实现三种Xml解析方法，结果看logcat
+ * 
+ * @author lyx
+ * 
+ */
 public class XMLParserActivity extends Activity implements View.OnClickListener {
     private static final String TAG = XMLParserActivity.class.getSimpleName();
 

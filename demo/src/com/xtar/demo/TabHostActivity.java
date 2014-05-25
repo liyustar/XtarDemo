@@ -4,6 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TabHost;
 
+/**
+ * 用TabHost来实现TabActivity<br>
+ * 很多Bug，要使用TabFragmentActivity
+ * 
+ * @author lyx
+ * 
+ */
 public class TabHostActivity extends Activity {
 
     private TabHost tabHost;

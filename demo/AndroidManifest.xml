@@ -5,8 +5,10 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="13"
         android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".app.MainApplication"
@@ -26,6 +28,9 @@
         <activity android:name=".ListViewActivity" />
         <activity android:name=".ListViewModel1Activity" />
         <activity android:name=".TabHostActivity" />
+        <activity android:name=".TabFragmentActivity" />
+        <activity android:name=".FragmentModel1Activity" />
+        <activity android:name=".FragmentModel2Activity" />
     </application>
 
 </manifest>

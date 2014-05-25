@@ -1,46 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/tabhost"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-    <LinearLayout
+    <TabHost
+        android:id="@+id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content" >
 
-        <TabWidget
-            android:id="@android:id/tabs"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-        </TabWidget>
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/tv_content1"
+            <TabWidget
+                android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FF0000"
-                android:text="@string/hello" />
+                android:orientation="horizontal" >
+            </TabWidget>
 
-            <TextView
-                android:id="@+id/tv_content2"
+            <FrameLayout
+                android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#00FF00"
-                android:text="@string/hello" />
+                android:layout_height="wrap_content" >
 
-            <TextView
-                android:id="@+id/tv_content3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#0000FF"
-                android:text="@string/hello" />
-        </FrameLayout>
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FF0000"
+                    android:text="@string/hello" />
 
-</TabHost>
+                <include
+                    android:id="@+id/layout_xml"
+                    layout="@layout/xmlparser_activity" />
+
+                <TextView
+                    android:id="@+id/tv_content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00FF00"
+                    android:text="@string/hello" />
+
+                <TextView
+                    android:id="@+id/tv_content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#0000FF"
+                    android:text="@string/hello" />
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>

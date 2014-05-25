@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">XtarDemo</string>
     <string name="hello">Hello</string>
     <string name="sax_parser">SAX Parser</string>
     <string name="dom_parser">DOM Parser</string>
     <string name="pull_parser">PULL Parser</string>
     <string name="listview1">ListView Model 1</string>
+    <string name="tag1">TAG__1</string>
+    <string name="tag2">TAG__2</string>
+    <string name="btn">Button</string>
+    <string name="conversation">消息</string>
+    <string name="plugin">动态</string>
+    <string name="contact">联系人</string>
+    <string name="setup">我</string>
+
 </resources>
