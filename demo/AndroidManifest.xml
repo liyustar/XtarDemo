@@ -31,6 +31,7 @@
         <activity android:name=".TabFragmentActivity" />
         <activity android:name=".FragmentModel1Activity" />
         <activity android:name=".FragmentModel2Activity" />
+        <activity android:name=".SQLiteActivity" />
     </application>
 
 </manifest>
