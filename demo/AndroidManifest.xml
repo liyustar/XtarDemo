@@ -33,6 +33,7 @@
         <activity android:name=".FragmentModel2Activity" />
         <activity android:name=".SQLiteActivity" />
         <activity android:name=".DaytimeActivity" />
+        <activity android:name=".EchoActivity" />
     </application>
 
 </manifest>

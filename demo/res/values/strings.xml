@@ -16,5 +16,6 @@
     <string name="setup">我</string>
 
     <string name="daytime">Daytime</string>
+    <string name="echo">Echo</string>
 
 </resources>
