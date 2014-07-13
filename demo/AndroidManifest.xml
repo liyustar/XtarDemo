@@ -32,6 +32,7 @@
         <activity android:name=".FragmentModel1Activity" />
         <activity android:name=".FragmentModel2Activity" />
         <activity android:name=".SQLiteActivity" />
+        <activity android:name=".DaytimeActivity" />
     </application>
 
 </manifest>

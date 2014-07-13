@@ -15,4 +15,6 @@
     <string name="contact">联系人</string>
     <string name="setup">我</string>
 
+    <string name="daytime">Daytime</string>
+
 </resources>
