@@ -5,8 +5,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
+import com.xtar.demo.app.MainApplication;
+
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -17,7 +18,6 @@ import android.widget.Toast;
 public class DaytimeActivity extends Activity implements View.OnClickListener {
     static final String TAG = DaytimeActivity.class.getSimpleName();
 
-    private Context mContext = null;
     private Button btn_daytime = null;
     Handler mHandler = null;
 
@@ -28,7 +28,6 @@ public class DaytimeActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.daytime_activity);
         btn_daytime = (Button) findViewById(R.id.btn_daytime);
 
-        mContext = this;
         mHandler = new Handler();
     }
 
@@ -73,7 +72,7 @@ public class DaytimeActivity extends Activity implements View.OnClickListener {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
-                    Toast.makeText(mContext, content, Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainApplication.getContext(), content, Toast.LENGTH_LONG).show();
                     btn_daytime.setEnabled(true);
                 }
             });
