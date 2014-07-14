@@ -21,7 +21,7 @@ public class EchoActivity extends Activity implements View.OnClickListener {
     public static final String TAG = EchoActivity.class.getSimpleName();
 
     private static final String ECHO_STR = "hello world\n";
-    private static final int ECHO_TIME = 10;
+    private static final int ECHO_TIME = 1000;
 
     private Button btn_echo = null;
     Handler mHandler = null;
@@ -63,8 +63,11 @@ public class EchoActivity extends Activity implements View.OnClickListener {
             startTime = System.currentTimeMillis();
             try {
                 sock.connect();
-                sock.sendString();
-                str = sock.recvString();
+                int t = ECHO_TIME;
+                while (t-- != 0) {
+                    sock.sendString();
+                    str = sock.recvString();
+                }
                 sock.close();
             } catch (Exception e) {
                 str = "error";
@@ -88,23 +91,27 @@ public class EchoActivity extends Activity implements View.OnClickListener {
 
     class EchoSocket {
         Socket sock = null;
+        OutputStreamWriter osw = null;
+        BufferedReader br = null;
 
         public void connect() throws Exception {
             sock = new Socket("192.168.0.108", 7);
+
+            OutputStream os = sock.getOutputStream();
+            osw = new OutputStreamWriter(os);
+
+            InputStream is = sock.getInputStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            br = new BufferedReader(isr);
         }
 
         public boolean sendString() throws Exception {
-            OutputStream os = sock.getOutputStream();
-            OutputStreamWriter osw = new OutputStreamWriter(os);
             osw.write(ECHO_STR);
             osw.flush();
             return true;
         }
 
         public String recvString() throws Exception {
-            InputStream is = sock.getInputStream();
-            InputStreamReader isr = new InputStreamReader(is);
-            BufferedReader br = new BufferedReader(isr);
             String str = null;
             sock.setSoTimeout(30 * 1000);
             str = br.readLine();
