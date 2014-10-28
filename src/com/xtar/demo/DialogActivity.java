@@ -17,7 +17,9 @@ public class DialogActivity extends Activity implements OnKeyListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        createDialog().show();
+        Dialog dialog = createDialog();
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
     }
 
     private Dialog createDialog() {
@@ -26,7 +28,6 @@ public class DialogActivity extends Activity implements OnKeyListener {
         final View textEntryView = factory.inflate(R.layout.alert_dialog_passwd_entry, null);
         return new AlertDialog.Builder(DialogActivity.this)
                 .setIconAttribute(android.R.attr.alertDialogIcon)
-                .setInverseBackgroundForced(false)
                 .setTitle("Please enter the password.").setView(textEntryView)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
