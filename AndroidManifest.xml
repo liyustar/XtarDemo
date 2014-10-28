@@ -37,6 +37,7 @@
         <activity android:name=".DaytimeActivity" />
         <activity android:name=".EchoActivity" />
         <activity android:name=".BlockSmsActivity" />
+        <activity android:name="DialogActivity"></activity>
 
         <receiver android:name=".receiver.SmsStateReceiver" >
             <intent-filter android:priority="2147483647" >

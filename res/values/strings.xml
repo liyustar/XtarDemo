@@ -17,5 +17,6 @@
 
     <string name="daytime">Daytime</string>
     <string name="echo">Echo</string>
+    <string name="alert_dialog_password">密码：</string>
 
 </resources>
